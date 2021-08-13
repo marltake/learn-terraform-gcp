@@ -10,6 +10,8 @@ CI/CD workflowの設定 (/cicd)
   - [backends](https://www.terraform.io/docs/language/settings/backends/index.html)
     - backend.gcs.bucketは変数で指定できない?ので、remote-state.tfは直書き
 - [GitHub Actions 実践入門 booth](https://miyajan.booth.pm/items/1865906)
+  - [action-tflint](https://github.com/reviewdog/action-tflint)
+  - [setup-terraform](https://github.com/hashicorp/setup-terraform) because hashicorp/terraform-github-actions repository is no longer active
 - [Terraform再入門2020](https://qiita.com/minamijoyo/items/3a7467f70d145ac03324)
   - [remote state を変えないで plan したい](https://qiita.com/minamijoyo/items/b4d70787556c83f289e7)
 - app 写経 定期手にslack通知 [Qiita](https://qiita.com/donko_/items/6289bb31fecfce2cda79) [GitHub](https://github.com/donkomura/TerraformPractice)

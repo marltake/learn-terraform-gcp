@@ -8,16 +8,10 @@ terraform {
 }
 
 provider "google" {
-  credentials = file(var.credentials_file)
-
-  project = var.project
+  project = "practice-cicd-322801"
   region  = var.region
   zone    = var.zone
 }
-
-variable "project" {}
-
-variable "credentials_file" {}
 
 variable "region" {
   default = "us-central1"
