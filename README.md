@@ -6,6 +6,7 @@ Terraform + GCP を実際に動かしてみる
 ## 2021-08-13
 CI/CD workflowの設定 (/cicd)
 - [GCSにtfstate](https://qiita.com/kawakawaryuryu/items/58d8afbb21155c2e9572)
+  - Terraformの状態保存するBucketはTerraformの外で作るべき。だよね。とりあえず別世界線で[bucket作成だけ](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/storage_bucket)
   - [backends](https://www.terraform.io/docs/language/settings/backends/index.html)
 - [GitHub Actions 実践入門 booth](https://miyajan.booth.pm/items/1865906)
 - [Terraform再入門2020](https://qiita.com/minamijoyo/items/3a7467f70d145ac03324)

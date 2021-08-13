@@ -15,10 +15,6 @@ provider "google" {
   zone    = var.zone
 }
 
-resource "google_compute_network" "cicd_network" {
-  name = "cicd-network"
-}
-
 variable "project" {}
 
 variable "credentials_file" {}
