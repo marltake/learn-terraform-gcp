@@ -12,6 +12,10 @@ CI/CD workflowの設定 (/cicd)
 - [GitHub Actions 実践入門 booth](https://miyajan.booth.pm/items/1865906)
   - [action-tflint](https://github.com/reviewdog/action-tflint)
   - [setup-terraform](https://github.com/hashicorp/setup-terraform) because hashicorp/terraform-github-actions repository is no longer active
+  - pull_request event
+    - https://docs.github.com/ja/actions/reference/workflow-syntax-for-github-actions
+    - https://docs.github.com/ja/actions/reference/events-that-trigger-workflows#webhook-events
+    - https://github.community/t/what-is-a-pull-request-synchronize-event/14784/3
 - [Terraform再入門2020](https://qiita.com/minamijoyo/items/3a7467f70d145ac03324)
   - [remote state を変えないで plan したい](https://qiita.com/minamijoyo/items/b4d70787556c83f289e7)
 - app 写経 定期手にslack通知 [Qiita](https://qiita.com/donko_/items/6289bb31fecfce2cda79) [GitHub](https://github.com/donkomura/TerraformPractice)
