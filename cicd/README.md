@@ -38,7 +38,7 @@ resource "google_storage_bucket" "terraform-state-store" {
 
 ## remote init
 
-terraform init時にはGOOGLE_CREDENTIALSかどれかの設定が必要。少なくとも、最初の一回めは。いや、localからinitするときは毎回必要。
+gcsにstateを移動したら, init, plan　は常にGOOGLE_BACKEND_CREDENTIALSが必要。それはそうか。
 
 localのstateはcopyしない。state用bucketを作成した時の情報で、以後管理から外すため。
 
