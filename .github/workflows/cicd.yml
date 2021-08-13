@@ -2,14 +2,15 @@ name: terraform CI
 on:
   pull_request:
     paths:
-      - ./cicd/**
+      - 'cicd/**'
+      - '.github/workflows/cicd.yml'
 
 jobs:
   terraform-ci:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./cicd
+        working-directory: cicd
     env:
       GOOGLE_BACKEND_CREDENTIALS: ${{ secrets.TF_API_TOKEN }}
     steps:
