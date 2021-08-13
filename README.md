@@ -8,6 +8,7 @@ CI/CD workflowの設定 (/cicd)
 - [GCSにtfstate](https://qiita.com/kawakawaryuryu/items/58d8afbb21155c2e9572)
   - Terraformの状態保存するBucketはTerraformの外で作るべき。だよね。とりあえず別世界線で[bucket作成だけ](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/storage_bucket)
   - [backends](https://www.terraform.io/docs/language/settings/backends/index.html)
+    - backend.gcs.bucketは変数で指定できない?ので、remote-state.tfは直書き
 - [GitHub Actions 実践入門 booth](https://miyajan.booth.pm/items/1865906)
 - [Terraform再入門2020](https://qiita.com/minamijoyo/items/3a7467f70d145ac03324)
   - [remote state を変えないで plan したい](https://qiita.com/minamijoyo/items/b4d70787556c83f289e7)
