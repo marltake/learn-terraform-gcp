@@ -12,6 +12,11 @@ CI/CD workflowの設定 (/cicd)
 - [GitHub Actions 実践入門 booth](https://miyajan.booth.pm/items/1865906)
   - [action-tflint](https://github.com/reviewdog/action-tflint)
   - [setup-terraform](https://github.com/hashicorp/setup-terraform) because hashicorp/terraform-github-actions repository is no longer active
+<<<<<<< Updated upstream
+=======
+    - NG https://www.terraform.io/docs/cli/config/config-file.html
+    - secrets.TF_API_TOKEN は 1行jsonで入力
+>>>>>>> Stashed changes
   - pull_request event
     - https://docs.github.com/ja/actions/reference/workflow-syntax-for-github-actions
     - https://docs.github.com/ja/actions/reference/events-that-trigger-workflows#webhook-events
