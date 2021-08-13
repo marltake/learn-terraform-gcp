@@ -12,8 +12,6 @@ jobs:
     defaults:
       run:
         working-directory: cicd
-    env:
-      GOOGLE_BACKEND_CREDENTIALS: ${{ secrets.TF_API_TOKEN }}
     steps:
       - uses: actions/checkout@v2
       - name: tflint
@@ -21,6 +19,8 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
       - uses: hashicorp/setup-terraform@v1
+        with:
+          cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
       - id: fmt
         run: terraform fmt -check
         continue-on-error: true
