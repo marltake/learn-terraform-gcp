@@ -3,7 +3,6 @@ on:
   pull_request:
     paths:
       - 'cicd/**'
-      - '.github/workflows/cicd.yml'
 
 jobs:
   terraform-ci:
