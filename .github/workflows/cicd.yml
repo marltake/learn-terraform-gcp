@@ -1,9 +1,9 @@
 name: terraform CI
 on:
   pull_request:
+    branches: [develop]
     paths:
       - 'cicd/**'
-      - '.github/workflows/cicd.yml'
 
 jobs:
   terraform-ci:
