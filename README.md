@@ -3,8 +3,14 @@ Terraform + GCP を実際に動かしてみる
 
 # change log
 
+## 2021-08-14
+CD workflowの設定 (/cicd)
+- [Terraform再入門2020](https://qiita.com/minamijoyo/items/3a7467f70d145ac03324)
+  - [Terraform職人入門](https://qiita.com/minamijoyo/items/1f57c62bed781ab8f4d7)
+- app 写経 定期手にslack通知 [Qiita](https://qiita.com/donko_/items/6289bb31fecfce2cda79) [GitHub](https://github.com/donkomura/TerraformPractice)
+
 ## 2021-08-13
-CI/CD workflowの設定 (/cicd)
+CI workflowの設定 (/cicd)
 - [GCSにtfstate](https://qiita.com/kawakawaryuryu/items/58d8afbb21155c2e9572)
   - Terraformの状態保存するBucketはTerraformの外で作るべき。だよね。とりあえず別世界線で[bucket作成だけ](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/storage_bucket)
   - [backends](https://www.terraform.io/docs/language/settings/backends/index.html)
@@ -18,9 +24,6 @@ CI/CD workflowの設定 (/cicd)
     - https://docs.github.com/ja/actions/reference/workflow-syntax-for-github-actions
     - https://docs.github.com/ja/actions/reference/events-that-trigger-workflows#webhook-events
     - https://github.community/t/what-is-a-pull-request-synchronize-event/14784/3
-- [Terraform再入門2020](https://qiita.com/minamijoyo/items/3a7467f70d145ac03324)
-  - [remote state を変えないで plan したい](https://qiita.com/minamijoyo/items/b4d70787556c83f289e7)
-- app 写経 定期手にslack通知 [Qiita](https://qiita.com/donko_/items/6289bb31fecfce2cda79) [GitHub](https://github.com/donkomura/TerraformPractice)
 
 ## 2021-08-09
 cert-botでhttps化 (/get-started)
