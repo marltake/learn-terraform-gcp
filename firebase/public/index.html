@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <script defer src="/__/firebase/5.3.1/firebase-app.js"></script>
+  <script defer src="/__/firebase/5.3.1/firebase-auth.js"></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
+  <script defer src="/__/firebase/init.js"></script>
+  <title>Welcome to Firebase Hosting</title>
+</head>
+
+<body>
+  <p>Hello, Firebase Hosting!</p>
+  <div id="firebaseui-auth-container"></div>
+  <div id="loader">Loading...</div>
+
+  <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
+  <!-- 自動構成 https://firebase.google.com/docs/hosting/reserved-urls?hl=ja#sdk_auto-configuration -->
+  <script src="/__/firebase/init.js"></script>
+  <script>
+    // Initialize Firebase
+    fetch('/__/firebase/init.json').then(async response => {
+      firebase.initializeApp(await response.json());
+    });
+  </script>
+
+  <script type="text/javascript">
+    var ui = new firebaseui.auth.AuthUI(firebase.auth());
+
+    var uiConfig = {
+      callbacks: {
+        signInSuccessWithAuthResult: function (authResult, redirectUrl) {
+          return true;
+        },
+        uiShown: function () {
+          document.getElementById('loader').style.display = 'none';
+        }
+      },
+      signInFlow: 'popup',
+      signInSuccessUrl: './success_top.html',
+      signInOptions: [
+        firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+      ],
+    };
+    ui.start('#firebaseui-auth-container', uiConfig);
+  </script>
+</body>
+
+</html>

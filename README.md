@@ -3,6 +3,12 @@ Terraform + GCP を実際に動かしてみる
 
 # change log
 
+## 2021-08-19
+Firebase Hosting and Authentication したけど, 静的ページにアクセス制限できてない。VueとかReactで書く前提なのかな。
+- https://www.topgate.co.jp/firebase04-firebase-hosting-deploy-website
+- https://www.topgate.co.jp/firebase05-firebase-authentication
+  - https://firebase.google.com/docs/hosting/reserved-urls?hl=ja#sdk_auto-configuration
+
 ## 2021-08-14
 CD workflowの設定 (/cicd)
 - [Terraform再入門2020](https://qiita.com/minamijoyo/items/3a7467f70d145ac03324)
