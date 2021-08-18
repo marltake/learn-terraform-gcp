@@ -1,6 +1,6 @@
 resource "google_storage_bucket" "terraform-state-store" {
-  name          = "marltake-practice-cicd"
-  project       = var.project
+  name          = "marltake-practice-cicd-2"
+  project       = "practice-cicd-mtk"
   location      = var.region
   storage_class = "REGIONAL"
 

@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "google" {
-  project = "practice-cicd-322801"
+  project = "practice-cicd-mtk"
   region  = var.region
   zone    = var.zone
 }
