@@ -17,5 +17,5 @@ variable "region" {
 }
 
 resource "google_project_service" "service" {
-  service = compute.googleapis.com
+  service = "compute.googleapis.com"
 }
