@@ -10,13 +10,8 @@ terraform {
 provider "google" {
   project = "practice-cicd-mtk"
   region  = var.region
-  zone    = var.zone
 }
 
 variable "region" {
   default = "us-central1"
-}
-
-variable "zone" {
-  default = "us-central1-c"
 }
