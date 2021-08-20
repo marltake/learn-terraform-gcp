@@ -16,14 +16,18 @@ jobs:
     defaults:
       run:
         working-directory: cicd
-    env:
-      GOOGLE_BACKEND_CREDENTIALS: ${{ secrets.TF_API_TOKEN }}
     steps:
       - uses: actions/checkout@v2
       - name: tflint
         uses: reviewdog/action-tflint@v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v0.2.0
+        with:
+          project_id: practice-cicd-mtk
+          service_account_key: ${{ secrets.TF_API_TOKEN }}
+          export_default_credentials: true
       - uses: hashicorp/setup-terraform@v1
       - id: fmt
         run: terraform fmt -check
