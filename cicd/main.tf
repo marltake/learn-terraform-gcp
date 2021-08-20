@@ -15,3 +15,7 @@ provider "google" {
 variable "region" {
   default = "us-central1"
 }
+
+resource "google_project_service" "service" {
+  service = "compute.googleapis.com"
+}
