@@ -16,3 +16,16 @@ provider "google" {
 resource "google_project_service" "service" {
   service = "compute.googleapis.com"
 }
+
+locals {
+  services = toset([
+    "containerregistry.googleapis.com",
+    "run.googleapis.com",
+  ])
+}
+
+resource "google_project_service" "service" {
+  for_each = local.services
+  project  = var.project
+  service  = each.value
+}
