@@ -13,6 +13,15 @@ provider "google" {
   zone    = "us-central1-c"
 }
 
+locals {
+  services = toset([
+    "compute.googleapis.com",
+    "containerregistry.googleapis.com",
+    "run.googleapis.com",
+  ])
+}
+
 resource "google_project_service" "service" {
-  service = "compute.googleapis.com"
+  for_each = local.services
+  service  = each.value
 }
