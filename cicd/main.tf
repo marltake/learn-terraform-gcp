@@ -9,11 +9,8 @@ terraform {
 
 provider "google" {
   project = "practice-cicd-mtk"
-  region  = var.region
-}
-
-variable "region" {
-  default = "us-central1"
+  region  = "us-central1"
+  zone    = "us-central1-c"
 }
 
 resource "google_project_service" "service" {
