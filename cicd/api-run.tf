@@ -33,8 +33,3 @@ resource "google_project_iam_member" "inference-invoker-iam" {
   role   = "roles/run.invoker"
   member = "serviceAccount:${google_service_account.api-run-service-account.email}"
 }
-
-data "google_project" "default" {}
-
-output "project_number" { value = data.google_project.default.number }
-output "project_id" { value = data.google_project.default.id }
