@@ -32,7 +32,7 @@ resource "google_service_account" "invoke-api-service-account" {
 # google_project_iam_member need iam.googleapis.com?
 # google_cloud_run_service_iam_binding 権限不足 Error 403: Permission 'run.services.setIamPolicy' denied on
 resource "google_cloud_run_service_iam_member" "invoke-api-member" {
-  for_each = locals.members
+  for_each = local.members
   service  = google_cloud_run_service.api-run.name
   location = google_cloud_run_service.api-run.location
   role     = "roles/viewer"
