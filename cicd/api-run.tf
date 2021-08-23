@@ -15,7 +15,7 @@ resource "google_cloud_run_service" "api-run" {
     percent         = 100
     latest_revision = true
   }
-  autogenerate_revision_name = true
+  # autogenerate_revision_name = true
   lifecycle {
     ignore_changes = [
       template[0].metadata[0].annotations
