@@ -4,7 +4,7 @@ resource "google_cloud_run_service" "api-run" {
   template {
     spec {
       containers {
-        image = "asia.gcr.io/practice-cicd-mtk/hello"
+        image = "asia.gcr.io/${var.project}/hello"
         resources {
           limits = { "cpu" : "1000m", "memory" : "1024Mi" }
         }
@@ -15,7 +15,7 @@ resource "google_cloud_run_service" "api-run" {
     percent         = 100
     latest_revision = true
   }
-  # autogenerate_revision_name = true
+  # autogenerate_revision_name = true  # why this is invalid?
   lifecycle {
     ignore_changes = [
       template[0].metadata[0].annotations
