@@ -4,7 +4,7 @@ resource "google_cloud_run_service" "api-run" {
   template {
     spec {
       containers {
-        image = "asia.gcr.io/${var.project}/hello"
+        image = "gcr.io/${var.project}/hello"
         resources {
           limits = { "cpu" : "1000m", "memory" : "1024Mi" }
         }
