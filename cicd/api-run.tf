@@ -29,7 +29,12 @@ resource "google_service_account" "api-run-service-account" {
   display_name = "Service Account for API Cloud Run"
 }
 
-resource "google_project_iam_member" "inference-invoker-iam" {
-  role   = "roles/run.invoker"
-  member = "serviceAccount:${google_service_account.api-run-service-account.email}"
+# google_project_iam_member need iam.googleapis.com?
+resource "google_cloud_run_service_iam_binding" "inference-invoker-binding" {
+  service  = google_cloud_run_service.api-run.name
+  location = google_cloud_run_service.api-run.location
+  role     = "roles/viewer"
+  members = [
+    "serviceAccount:${google_service_account.api-run-service-account.email}"
+  ]
 }
