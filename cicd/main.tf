@@ -29,6 +29,7 @@ locals {
     "compute.googleapis.com",
     "containerregistry.googleapis.com",
     "run.googleapis.com",
+    "iam.googleapis.com",
   ])
 }
 
