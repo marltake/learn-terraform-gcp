@@ -8,9 +8,20 @@ terraform {
 }
 
 provider "google" {
-  project = "practice-cicd-mtk"
-  region  = "us-central1"
-  zone    = "us-central1-c"
+  project = var.project
+  region  = var.default_location.region
+  zone    = var.default_location.zone
+}
+
+variable "project" {
+  default = "practice-cicd-mtk"
+}
+
+variable "default_location" {
+  default = {
+    region = "us-central1"
+    zone   = "us-central1-c"
+  }
 }
 
 locals {
