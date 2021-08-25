@@ -13,12 +13,12 @@ locals {
   services = toset([
     "iam.googleapis.com", # Manages identity and access control
     #
+    "compute.googleapis.com",           # VM(GCE)
+    "containerregistry.googleapis.com", # Conttainer Reigstry
+    "run.googleapis.com",               # Cloud Run
     # "cloudresourcemanager.googleapis.com",  # Cloud Resoure Manager
-    # "containerregistry.googleapis.com",  # Conttainer Reigstry
-    # "run.googleapis.com",  # Cloud Run
     # "container.googleapis.com",  # GKE(k8s)
     # "file.googleapis.com",  # Cloud Firestore
-    # "compute.googleapis.com",  # VM
     # "anthos.googleapis.com",  # Anthos ## billing
     # "redis.googleapis.com",  # redis (on memory)
     # "spanner.googleapis.com",  # Cloud Spanner
@@ -55,13 +55,13 @@ locals {
     "roles/iam.securityAdmin",       # セキュリティ管理者
     "roles/storage.admin",           # ストレージ管理者
     #
-    # "roles/iam.serviceAccountUser",  # サービス アカウント ユーザー
-    # "roles/compute.admin",           # Compute 管理者
+    "roles/iam.serviceAccountUser",         # サービス アカウント ユーザー
+    "roles/compute.admin",                  # Compute 管理者
+    "roles/containerregistry.ServiceAgent", # Container Registry サービス エージェント
+    "roles/run.admin",                      # Cloud Run 管理者
+    "roles/datastore.owner",                # Cloud Datastore オーナー
     # "roles/appengine.appAdmin",      # App Engine 管理者
     # "roles/appengine.appCreator",    # App Engine 作成者
-    # "roles/containerregistry.ServiceAgent", # Container Registry サービス エージェント
-    # "roles/run.admin",               # Cloud Run 管理者
-    # "roles/datastore.owner",         # Cloud Datastore オーナー
     # "roles/pubsub.admin",            # Pub/Sub 管理者
   ])
 }
