@@ -8,7 +8,7 @@ resource "google_compute_instance" "nginx_instance" {
   boot_disk {
     initialize_params {
       image = "ubuntu-os-cloud/ubuntu-2004-lts"
-      size = 30
+      size  = 30
     }
   }
   network_interface {
