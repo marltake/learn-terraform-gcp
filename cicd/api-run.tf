@@ -22,25 +22,28 @@ resource "google_cloud_run_service" "api-run" {
     ]
   }
 }
-
 # IAM
-resource "google_service_account" "invoke-api-service-account" {
-  account_id   = "api-run-service-account"
-  display_name = "Service Account for API Cloud Run"
+resource "google_service_account" "api-invoker" {
+  account_id   = "api-invoker"
+  display_name = "Service Account for call API Cloud Run"
 }
-
 # google_project_iam_member need iam.googleapis.com?
 # google_cloud_run_service_iam_binding 権限不足 Error 403: Permission 'run.services.setIamPolicy' denied on
-resource "google_cloud_run_service_iam_member" "invoke-api-member" {
-  for_each = local.members
+resource "google_cloud_run_service_iam_binding" "invokeer" {
   service  = google_cloud_run_service.api-run.name
   location = google_cloud_run_service.api-run.location
-  role     = "roles/viewer"
-  member   = each.value
+  role     = "roles/run.invoker"
+  members = [
+    "serviceAccount:${google_service_account.api-invoker.email}",
+  ]
 }
-
 locals {
   members = toset([
-    "serviceAccount:${google_service_account.invoke-api-service-account.email}",
+    "serviceAccount:${google_service_account.api-invoker.email}",
   ])
+}
+resource "google_project_iam_member" "allow-token-create-for-cloud-run" {
+  for_each = local.members
+  role   = "roles/iam.serviceAccountTokenCreator"
+  member = each.value
 }
