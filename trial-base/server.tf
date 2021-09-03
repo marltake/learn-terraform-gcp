@@ -9,8 +9,7 @@ resource "google_compute_instance" "server" {
     }
   }
   network_interface {
-    network = google_compute_network.vpc_network.name
-    access_config {
-    }
+    subnetwork = google_compute_subnetwork.vpc_subnet.name
+    access_config {}
   }
 }
