@@ -1,6 +1,6 @@
 terraform {
   backend "gcs" {
-    bucket = "marltake-practice-cicd-2"
+    bucket = "trial-cicd-a-state"
     prefix = "develop"
   }
 }
