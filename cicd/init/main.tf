@@ -2,38 +2,21 @@ terraform {
   required_providers {
     google = {
       source  = "hashicorp/google"
-      version = "3.5.0"
+      version = "~>3.5"
     }
   }
 }
-
 provider "google" {
   project = var.project
-  region  = var.default_location.region
-  zone    = var.default_location.zone
+  region  = var.default.region
+  zone    = var.default.zone
 }
-
 variable "project" {
-  default = "practice-cicd-mtk"
+  default = "trial-cicd-a"
 }
-
-variable "default_location" {
+variable "default" {
   default = {
     region = "us-central1"
     zone   = "us-central1-c"
   }
-}
-
-locals {
-  services = toset([
-    "compute.googleapis.com",
-    "containerregistry.googleapis.com",
-    "run.googleapis.com",
-    "iam.googleapis.com",
-  ])
-}
-
-resource "google_project_service" "service" {
-  for_each = local.services
-  service  = each.value
 }
