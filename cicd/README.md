@@ -1,4 +1,31 @@
 # logs for setup
+##
+これは必要ないかもしれない。 https://cloud.google.com/pubsub/docs/push/?hl=ja#setting_up_for_push_authentication
+```
+locals {
+  members = toset([
+    "serviceAccount:${google_service_account.api-invoker.email}",
+  ])
+}
+resource "google_project_iam_member" "allow-token-create-for-cloud-run" {
+  for_each = local.members
+  role     = "roles/iam.serviceAccountTokenCreator"
+  member   = each.value
+}
+```
+どちらにしろ注意点。for_eachの要素はすでに存在している必要がある。applyの分割が必要。 https://kazuhira-r.hatenablog.com/entry/2020/07/04/161848
+```
+│ Error: Invalid for_each argument
+│
+│   on api-run.tf line 46, in resource "google_project_iam_member" "allow-token-create-for-cloud-run":
+│   46:   for_each = local.members
+│     ├────────────────
+│     │ local.members is set of string with 1 element
+│
+│ The "for_each" value depends on resource attributes that cannot be determined until apply, so Terraform cannot predict how many instances will be created. To work around this, use the -target argument
+│ to first apply only the resources that the for_each depends on.
+╵
+```
 
 ## just make bucket for terraform state
 ```

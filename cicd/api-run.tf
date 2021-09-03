@@ -1,6 +1,6 @@
 resource "google_cloud_run_service" "api-run" {
   name     = "api-run"
-  location = var.default_location.region
+  location = var.default.region
   template {
     spec {
       containers {
@@ -36,14 +36,4 @@ resource "google_cloud_run_service_iam_binding" "invokeer" {
   members = [
     "serviceAccount:${google_service_account.api-invoker.email}",
   ]
-}
-locals {
-  members = toset([
-    "serviceAccount:${google_service_account.api-invoker.email}",
-  ])
-}
-resource "google_project_iam_member" "allow-token-create-for-cloud-run" {
-  for_each = local.members
-  role   = "roles/iam.serviceAccountTokenCreator"
-  member = each.value
 }
