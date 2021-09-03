@@ -2,6 +2,8 @@
 Terraform + GCP を実際に動かしてみる
 
 # change log
+## 2021-09-03
+プロジェクト初期化サンプル(/trial-base)
 
 ## 2021-08-19
 Firebase Hosting and Authentication したけど, 静的ページにアクセス制限できてない。VueとかReactで書く前提なのかな。
@@ -13,7 +15,7 @@ Firebase Hosting and Authentication したけど, 静的ページにアクセス
 CD workflowの設定 (/cicd)
 - [Terraform再入門2020](https://qiita.com/minamijoyo/items/3a7467f70d145ac03324)
   - [Terraform職人入門](https://qiita.com/minamijoyo/items/1f57c62bed781ab8f4d7)
-- app 写経 定期手にslack通知 [Qiita](https://qiita.com/donko_/items/6289bb31fecfce2cda79) [GitHub](https://github.com/donkomura/TerraformPractice)
+- ~~app 写経 定期手にslack通知 [Qiita](https://qiita.com/donko_/items/6289bb31fecfce2cda79) [GitHub](https://github.com/donkomura/TerraformPractice)~~
 
 ## 2021-08-13
 CI workflowの設定 (/cicd)
