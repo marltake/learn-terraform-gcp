@@ -2,6 +2,10 @@
 Terraform + GCP を実際に動かしてみる
 
 # change log
+## 2021-09-04
+内部Ingress設定(/trial-base) [PR30](https://github.com/marltake/learn-terraform-gcp/pull/30)
+- defaultネットワーク以外はinternal通信許可設定を明示的に指定する必要がある。
+
 ## 2021-09-03
 プロジェクト初期化サンプル(/trial-base)
 
