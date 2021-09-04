@@ -30,7 +30,7 @@ resource "google_compute_firewall" "frontend" {
   direction = "INGRESS"
   allow {
     protocol = "tcp"
-    ports    = ["80", "443"]
+    ports    = ["80", "443", "3000", "8086"]
   }
   target_tags   = ["web"]
   source_ranges = ["0.0.0.0/0"]
