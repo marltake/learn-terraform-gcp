@@ -1,10 +1,11 @@
 resource "google_compute_instance" "decoy" {
   name         = "decoy"
-  machine_type = "f1-micro"
+  machine_type = "e2-micro"
   tags         = ["dev"]
   boot_disk {
     initialize_params {
-      image = "ubuntu-os-cloud/ubuntu-2004-lts"
+      # image = "ubuntu-os-cloud/ubuntu-2004-lts"
+      image = "ubuntu20-telegraf-decoy"
     }
   }
   network_interface {
@@ -23,7 +24,7 @@ locals {
 resource "google_compute_instance" "sub-decoy" {
   for_each     = local.decoys
   name         = each.value
-  machine_type = "f1-micro"
+  machine_type = "e2-micro"
   boot_disk {
     initialize_params {
       image = "ubuntu20-telegraf-decoy"
