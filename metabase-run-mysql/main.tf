@@ -45,3 +45,8 @@ resource "google_storage_bucket" "terraform-state-store" {
     }
   }
 }
+terraform {
+  backend "gcs" {
+    bucket = "metabase-run-mysql-tfstate"
+  }
+}
