@@ -1,10 +1,14 @@
 locals {
   services = toset([
+    # Service Account extr
     # "cloudbilling.googleapis.com",  # Cloud Billing API (manually, inter project)
+    ## reading or editing Project Service
+    "cloudresourcemanager.googleapis.com", # Cloud Resource Manager API
+    "serviceusage.googleapis.com",         # Service Usage API
+    # end extra
     "iam.googleapis.com", # Manages identity and access control
     # "containerregistry.googleapis.com",    # Conttainer Reigstry
     # "run.googleapis.com",                  # Cloud Run
-    # "cloudresourcemanager.googleapis.com", # Cloud Resoure Manager (need for adding roles/bigquery.jobUser)
     # "bigquery.googleapis.com",             # BIg Query
     # "compute.googleapis.com",              # VM(GCE)
     # "iap.googleapis.com",                  # Cloud Identity-Aware Proxy API  いこう
