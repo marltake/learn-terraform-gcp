@@ -1,5 +1,6 @@
 locals {
   services = toset([
+    # "cloudbilling.googleapis.com",  # Cloud Billing API (manually, inter project)
     "iam.googleapis.com", # Manages identity and access control
     # "containerregistry.googleapis.com",    # Conttainer Reigstry
     # "run.googleapis.com",                  # Cloud Run
