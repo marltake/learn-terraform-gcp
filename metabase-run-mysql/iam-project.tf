@@ -1,14 +1,15 @@
 locals {
   services = toset([
-    # Service Account extr
+    # Service Account extra
     # "cloudbilling.googleapis.com",  # Cloud Billing API (manually, inter project)
     ## reading or editing Project Service
     "cloudresourcemanager.googleapis.com", # Cloud Resource Manager API
     "serviceusage.googleapis.com",         # Service Usage API
-    # end extra
+    ## control roles
     "iam.googleapis.com", # Manages identity and access control
-    # "containerregistry.googleapis.com",    # Conttainer Reigstry
-    # "run.googleapis.com",                  # Cloud Run
+    # end extra
+    "containerregistry.googleapis.com", # Conttainer Reigstry
+    "run.googleapis.com",               # Cloud Run
     # "bigquery.googleapis.com",             # BIg Query
     # "compute.googleapis.com",              # VM(GCE)
     # "iap.googleapis.com",                  # Cloud Identity-Aware Proxy API  いこう
@@ -46,13 +47,15 @@ resource "google_service_account" "deploy" {
 }
 locals {
   roles = toset([
+    # Service Account base
     "roles/iam.serviceAccountAdmin", # サービス アカウント管理者
     "roles/iam.roleAdmin",           # ロールの管理者
     "roles/iam.securityAdmin",       # セキュリティ管理者
     "roles/iam.serviceAccountUser",  # サービス アカウント ユーザー
     "roles/storage.admin",           # ストレージ管理者
-    # "roles/containerregistry.ServiceAgent", # Container Registry サービス エージェント
-    # "roles/run.admin",                      # Cloud Run 管理者
+    # end base
+    "roles/containerregistry.ServiceAgent", # Container Registry サービス エージェント
+    "roles/run.admin",                      # Cloud Run 管理者
     # "roles/cloudsql.admin",                 # Cloud SQL 管理者
     # "roles/bigquery.admin",                 # BigQuery 管理者
     # "roles/compute.admin",                  # Compute 管理者
