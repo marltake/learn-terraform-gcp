@@ -38,4 +38,5 @@ resource "google_compute_instance" "sub-decoy" {
     automatic_restart   = false
     on_host_maintenance = "TERMINATE"
   }
+  # allow_stopping_for_update = true
 }
